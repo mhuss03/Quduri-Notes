@@ -1,0 +1,96 @@
+.wrap {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  min-width: 360px;
+}
+
+.table th {
+  font-weight: 500;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  background: var(--surface-2);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table td:first-child {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.table tr:hover td {
+  background: var(--surface-2);
+}
+
+/* value colours */
+.ok      { color: var(--green-text); }
+.bad     { color: var(--red-text);   }
+.partial { color: var(--amber-text); }
+.haram   { color: var(--red-text);   font-weight: 500; }
+.halal   { color: var(--green-text); font-weight: 500; }
+
+/* responsive: stack on very small screens */
+@media (max-width: 480px) {
+  .table { min-width: unset; }
+  .table thead { display: none; }
+  .table tr {
+    display: block;
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0;
+  }
+  .table tr:last-child { border-bottom: none; }
+  .table td {
+    display: flex;
+    gap: 8px;
+    padding: 4px 12px;
+    border-bottom: none;
+  }
+  .table td::before {
+    content: attr(data-header);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    min-width: 80px;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+}
